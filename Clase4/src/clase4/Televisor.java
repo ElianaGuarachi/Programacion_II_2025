@@ -39,6 +39,7 @@ public class Televisor {
     
     public void power(){
         estaEncendido = !estaEncendido;
+        System.out.println(estaEncendido ? "Encendido" : "Apagado");
     }
     
     private void validarTamanio(double tamanio){

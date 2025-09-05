@@ -46,7 +46,8 @@ public class Rectangulo {
         return rec1.sumarPerimetroDosRectangulos(rec2);
     }
     
-    public String mostrarRectangulo(){
-        return "";
+    @Override
+    public String toString() {
+        return "Base: " + base + ", Altura: " + altura;
     }
 }

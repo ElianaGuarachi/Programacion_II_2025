@@ -15,9 +15,12 @@ public class Guia1 {
         System.out.println("Nuevo rectangulo: " + rec3.calcularPerimetro());
         
         System.out.println("---------------------------------------------------------------------------");
-        String x = rec1.toString();
-        System.out.println(x);
+
         System.out.println(rec1);
+        
+        
+        
+        
         
         //EJERCICIO 2
         /*Circulo c1 = new Circulo(5);

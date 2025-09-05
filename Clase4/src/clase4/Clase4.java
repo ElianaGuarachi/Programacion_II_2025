@@ -41,11 +41,16 @@ public class Clase4 {
         
         try {
             Televisor tv1 = new Televisor("Samsung", 55);
-            tv1.power();
-            tv1.bajarCanal();
+            //tv1.power();
+            //tv1.bajarCanal();
             /*for(int i = 0; i < 100; i++){
                 tv1.subirCanal();
             }*/
+            
+            ControlRemoto control = new ControlRemoto();
+            control.setTv(tv1);
+            control.encender();
+            control.subirCanal();
         }
         catch(IllegalArgumentException ex){
             System.out.println(ex.getMessage());
