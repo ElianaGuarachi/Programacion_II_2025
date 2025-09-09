@@ -14,15 +14,15 @@ public class Clase6 {
      */
     public static void main(String[] args) {
         
-        Motor motor1 = new Motor(13456, "Nafta", 2.0);
-        Auto auto1 = new Auto("ABC123", "Renault", "Negro", 2024, motor1);
-        Auto auto2 = new Auto("FGH795", "Fiat", "Blanco", 2020, new Motor(523689, "Nafta", 4.0));
-        
-        //lo siguiente esta mal
-        motor1.setRpm(2000);
+        Motor motor1 = new Motor(13456, Combustible.NAFTA, 2.0);
+        Auto auto1 = new Auto("ABC123", "Renault", Color.AZUL, 2024, motor1);
         
         System.out.println(auto1);
-        System.out.println(auto2);
+        
+        auto1.acelerar();
+        auto1.acelerar();
+        
+        System.out.println(auto1);
         
     }
     

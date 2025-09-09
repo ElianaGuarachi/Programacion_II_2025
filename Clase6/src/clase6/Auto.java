@@ -8,16 +8,20 @@ public class Auto {
     
     private String patente;
     private String marca;
-    private String color;
+    private Color color;
     private int modelo;
     private Motor motor; //Si es una composicion no puede estar Motor en null
     
-    public Auto(String patente, String marca, String color, int modelo, Motor motor){ 
+    public Auto(String patente, String marca, Color color, int modelo, Motor motor){ 
         this.patente = patente;
         this.marca = marca;
         this.color = color;
         this.modelo = modelo;
         this.motor = motor;
+    }
+    
+    public void acelerar(){
+        motor.acelerar();
     }
     
     @Override

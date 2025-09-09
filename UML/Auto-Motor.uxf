@@ -1,29 +1,52 @@
-<diagram program="umletino" version="15.1"><zoom_level>13</zoom_level><element><id>UMLClass</id><coordinates><x>52</x><y>91</y><w>273</w><h>247</h></coordinates><panel_attributes>Auto
+<diagram program="umletino" version="15.1"><zoom_level>13</zoom_level><element><id>UMLClass</id><coordinates><x>0</x><y>208</y><w>247</w><h>247</h></coordinates><panel_attributes>Auto
 --
 
 - patente: String
 - marca: String
-- color: String
 - modelo: int
 
 --
 
 + Auto(String, String, String, Int)
++ acelerar(): void
 + toString(): String
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>455</x><y>91</y><w>273</w><h>247</h></coordinates><panel_attributes>Motor
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>403</x><y>52</y><w>247</w><h>247</h></coordinates><panel_attributes>Motor
 --
 
 - nroSerie: int
-- tipoCombustible: String
 - cilindrada: double
-
+- npm: int
 
 --
 
 + Motor(int, String, double)
++ getRpm(): int
++ acelerar(): void
 + toString(): String
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>312</x><y>169</y><w>169</w><h>65</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>234</x><y>143</y><w>195</w><h>130</h></coordinates><panel_attributes>lt=&lt;-
 - motor
 m1= 1
-</panel_attributes><additional_attributes>110;20;10;20</additional_attributes></element></diagram>
+</panel_attributes><additional_attributes>130;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>403</x><y>325</y><w>143</w><h>195</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Color
+--
+
+__+ ROJO__
+__+ NEGRO__
+__+ BLANCO__
+__+ AZUL__
+__+ GRIS__
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>234</x><y>299</y><w>195</w><h>130</h></coordinates><panel_attributes>lt=&lt;-
+- Color
+m1= 1</panel_attributes><additional_attributes>130;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>819</x><y>52</y><w>117</w><h>234</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Combustible
+--
+
+__+ GAS__
+__+ NAFTA__
+__+ DIESEL__
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>637</x><y>130</y><w>208</w><h>65</h></coordinates><panel_attributes>lt=&lt;-
+
+- Combustible
+m1= 1</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element></diagram>

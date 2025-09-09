@@ -10,23 +10,32 @@ package clase6;
  */
 public class Motor {
     private int nroSerie;
-    private String tipoCombustible;
+    private Combustible combustible;
     private double cilindrada;
     private int rpm;
     
-    public Motor(int nroSerie, String tipo, double cilindrada){ 
+    public Motor(int nroSerie, Combustible tipo, double cilindrada){ 
         this.nroSerie = nroSerie;
-        this.tipoCombustible = tipo;
+        this.combustible = tipo;
         this.cilindrada = cilindrada;
     }
     
-    public void setRpm(int revoluciones){
-        this.rpm = revoluciones;
+    public int getRpm(int revoluciones){
+        return this.rpm;
     }
+    
+    public void acelerar(){
+        this.rpm += 1000;
+    }
+    
+    //No modificar de manera directa, rompe POO
+    /*public void setRpm(int revoluciones){
+        this.rpm = revoluciones;
+    }*/
     
     @Override
     public String toString(){
-        return "Nro Serie: " + nroSerie + ", Tipo de combustible: " + tipoCombustible + ", Cilindrada: " + cilindrada + ", rpm: " + rpm;
+        return "Nro Serie: " + nroSerie + ", Tipo de combustible: " + combustible + ", Cilindrada: " + cilindrada + ", rpm: " + rpm;
     }
     
 }

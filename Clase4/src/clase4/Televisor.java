@@ -42,6 +42,13 @@ public class Televisor {
         System.out.println(estaEncendido ? "Encendido" : "Apagado");
     }
     
+    //isBlank si es un caracter en blanco (barra espaciadora)
+    private void validarMarca(String marca){
+        if(marca == null || marca.isBlank() || marca.isEmpty() || marca.length() < 2){
+            throw new IllegalArgumentException("Tamanio invalido");
+        }
+    }
+    
     private void validarTamanio(double tamanio){
         if(tamanio <= 0){
             throw new IllegalArgumentException("Tamanio invalido");
