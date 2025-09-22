@@ -46,9 +46,9 @@ public class Posnet {
         }
     }
         
-    private void validarCuotas(int cuotas){
+    private static void validarCuotas(int cuotas){
         if(cuotas < MIN_CUOTA || cuotas > MAX_CUOTA) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Cuotas invalidas");
         }
     }
     
