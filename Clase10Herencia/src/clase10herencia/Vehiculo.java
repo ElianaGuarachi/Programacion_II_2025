@@ -4,7 +4,7 @@ package clase10herencia;
 
 import java.util.Objects;
 
-public class Vehiculo {
+public abstract class Vehiculo {
 
     private String patente;
     private String marca;
@@ -29,6 +29,9 @@ public class Vehiculo {
        return this.modelo;
     }
     
+    public abstract void acelerar();
+    public abstract void frenar();
+    
     @Override
     public boolean equals(Object o){
        if (o == null || !(o instanceof Vehiculo vehiculo)) {
@@ -49,7 +52,10 @@ public class Vehiculo {
     
     @Override
     public String toString(){
-        return "Vehiculo {" + "patente=" + patente + ", marca=" + marca + ", modelo=" + modelo;
+        return nombreClase() + " = " + "patente=" + patente + ", marca=" + marca + ", modelo=" + modelo;
     }
     
+    protected String nombreClase(){
+        return getClass().getName().split("\\.")[1];
+    }
 }

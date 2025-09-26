@@ -24,6 +24,13 @@ public class Clase10Herencia {
         System.out.println(garage.cantidadVehiculos());
         
         for (Vehiculo v : garage.getVehiculos()) {
+            if (v instanceof Moto m) {
+                m.bloquear();
+            }
+            if (v instanceof VehiculoDeCarga vc) {
+                vc.cargar(200);
+                vc.cargar(356);
+            }
             System.out.println(v);
         }
         
@@ -41,6 +48,10 @@ public class Clase10Herencia {
         Moto m2 = new Moto("FDS789", "Suzuki", 2021);
         Moto m3 = new Moto("NHT456", "Kawazaki", 2021);
         
+        Camion c1 = new Camion("SDF456", "Pepe", 2024, 5000);
+        
+        Tren t1 = new Tren("BVC546", "AA", 1995,100000,Combustible.ELECTRICO);
+        
         e.agregarVehiculo(auto1);
         e.agregarVehiculo(auto2);
         e.agregarVehiculo(auto3);
@@ -49,6 +60,8 @@ public class Clase10Herencia {
         e.agregarVehiculo(m1);
         e.agregarVehiculo(m2);
         e.agregarVehiculo(m3);
+        e.agregarVehiculo(c1);
+        e.agregarVehiculo(t1);
     }
     
 }
