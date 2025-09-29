@@ -1,0 +1,76 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>80</x><y>10</y><w>240</w><h>120</h></coordinates><panel_attributes>Estacionamiento
+--
+- nombre: String
+
+--
++ Estacionamiento(nombre: String)
++ agregarAuto(nuevoAuto: Auto): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>760</x><y>270</y><w>210</w><h>160</h></coordinates><panel_attributes>Auto
+--
+- tieneGPS: boolean
+
+--
++ Auto(String, String, Int)
++ toString(): String
++ acelerar(): void
++ frenar(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>530</x><y>270</y><w>220</w><h>160</h></coordinates><panel_attributes>Moto
+--
+- busqueda: boolean
+
+--
++ Moto(String, String, String, boolean)
++ toString(): String
++ bloquear(): void
++ acelerar(): void
++ frenar(): void
++ calcularRuta(destino: String):void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>0</y><w>330</w><h>220</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+Vehiculo
+--
+- patente: String
+- marca: String
+- modelo: String
+
+--
++ Vehiculo(patente: String, marca: String, modelo: int)
+/+ acelar(): void/
+/+ frenar(): void/
++ toString(): String
++ tienePatente(patente: String): void
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>210</y><w>300</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;280;60</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>210</y><w>90</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;70;60</additional_attributes></element><element><id>Relation</id><coordinates><x>310</x><y>50</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+objetos: ArrayList&lt;&gt;
+m1=0...*
+</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>550</y><w>310</w><h>180</h></coordinates><panel_attributes>Camion
+--
+
+--
++ Camion(String, String, String, double, double)
++ cargar(carga: double): void
++ acelar(): void
++ frenar(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>200</x><y>470</y><w>150</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>130;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>550</y><w>340</w><h>160</h></coordinates><panel_attributes>Tren
+--
+
+--
++ Tren(String, String, String, double, double, Combustible)
++ toString(): String
++ cargar(carga: double): void
++ acelar(): void
++ frenar(): void
++ sonarSilbato(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>470</y><w>190</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;170;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>550</y><w>130</w><h>110</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+Combustible
+--
+__+ Vapor__
+__+ Diesel__
+__+ Electrico__</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>290</y><w>290</w><h>190</h></coordinates><panel_attributes>&lt;&lt;abstract&gt;&gt;
+VehiculoDeCarga
+--
+- carga: double
+- maxCarga: double
+
+--
++ Camion(String, String, String, double, double)
++ toString(): String
+/+ cargar(carga: double): void/
++ getCarga(): double</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>370</x><y>210</y><w>170</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>150;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>590</y><w>180</w><h>50</h></coordinates><panel_attributes>lt=&lt;-
+- tipoCombustible
+m1=1</panel_attributes><additional_attributes>160;20;10;20</additional_attributes></element></diagram>
