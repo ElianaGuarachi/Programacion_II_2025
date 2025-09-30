@@ -38,6 +38,16 @@ public class Sucursal {
         return new ArrayList<>(dispositivos);
     } 
     
+    public ArrayList<DispositivoElectronico> getDispositivos(TipoDispositivo tipoBuscado) {
+        ArrayList<DispositivoElectronico> toReturn = new ArrayList<>();
+        for (DispositivoElectronico dispositivo : dispositivos) {
+            if (dispositivo.esTipo(tipoBuscado)) {
+                toReturn.add(dispositivo);
+            }
+        }
+        return toReturn;
+    } 
+    
     @Override
     public int hashCode(){
         return Objects.hash(nombre);

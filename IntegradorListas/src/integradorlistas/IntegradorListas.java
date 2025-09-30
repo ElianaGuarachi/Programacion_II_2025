@@ -1,14 +1,42 @@
 package integradorlistas;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class IntegradorListas {
 
     public static void main(String[] args) {
         
-        CadenaTecnologia compumundo = new CadenaTecnologia();
+        /*CadenaTecnologia compumundo = new CadenaTecnologia();
         hardcodearCadena(compumundo);
-        mostrarDispositivos(compumundo.getDispositivos());
+        
+        System.out.println(compumundo.getDispositivos(TipoDispositivo.TABLET));
+        
+        System.out.println(DispositivoElectronico.toTable(compumundo.getDispositivos(TipoDispositivo.COMPUTADORA)));
+        
+        System.out.println(compumundo.getTablaDispositivos());*/
+        
+        
+        ArrayList<Integer> numeros = new ArrayList<>(List.of(1,3,4,7,6,3,6,8,3));
+        
+        System.out.println(numeros);
+        
+        /*for (int i = 0; i < numeros.size(); i++) {
+            if (numeros.get(i) == 3) {
+                numeros.remove(i);
+                break;
+            }
+        }
+        
+        for (int i = numeros.size() - 1; i >= 1; i--) {
+            if (numeros.get(i) == 3) {
+                numeros.remove(i);
+            }
+        }*/
+        
+        
+        
+        System.out.println(numeros);
         
     }
     
