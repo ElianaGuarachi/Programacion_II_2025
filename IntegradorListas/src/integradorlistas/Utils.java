@@ -14,4 +14,8 @@ public class Utils {
         sb.append('\n');
         return sb.toString();
     }
+    
+    public static String separadorLargo(){
+        return sepHotizontal(60, '*');
+    }
 }

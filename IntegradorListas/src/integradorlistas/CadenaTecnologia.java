@@ -33,8 +33,29 @@ public class CadenaTecnologia {
         return DispositivoElectronico.toTable(getDispositivos());
     }
     
-    /*public DispositivoElectronico borrarDispositivo(String nombreSucursal, String idDispositivo){
-        
-    }*/
+    public Sucursal buscarSucursal(String nombre){
+        for (Sucursal suc : sucursales) {
+            if (suc.tieneNombre(nombre)) {
+                return suc;
+            }
+        }
+        return null;
+    }
+    
+    public DispositivoElectronico borrarDispositivo(String nombreSucursal, String idDispositivo){
+        Sucursal suc = buscarSucursal(nombreSucursal);
+        if (suc == null) {
+            throw new IllegalArgumentException("Sucursal inexistente");
+        }
+        return suc.borrarDispositivoIt(idDispositivo);
+    }
+    
+    public double[] porcDispositivosPorTipo(String nombreSucursal){
+        Sucursal suc = buscarSucursal(nombreSucursal);
+        if (suc == null) {
+            throw new IllegalArgumentException("Sucursal inexistente");
+        }
+        return suc.porcDispositivosPorTipo();
+    }
 
 }

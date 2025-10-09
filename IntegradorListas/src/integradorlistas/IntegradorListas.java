@@ -7,36 +7,24 @@ public class IntegradorListas {
 
     public static void main(String[] args) {
         
-        /*CadenaTecnologia compumundo = new CadenaTecnologia();
+        CadenaTecnologia compumundo = new CadenaTecnologia();
         hardcodearCadena(compumundo);
         
         System.out.println(compumundo.getDispositivos(TipoDispositivo.TABLET));
         
         System.out.println(DispositivoElectronico.toTable(compumundo.getDispositivos(TipoDispositivo.COMPUTADORA)));
         
-        System.out.println(compumundo.getTablaDispositivos());*/
+        System.out.println(compumundo.getTablaDispositivos());
         
+        Utils.separadorLargo();
         
-        ArrayList<Integer> numeros = new ArrayList<>(List.of(1,3,4,7,6,3,6,8,3));
+        System.out.println(compumundo.borrarDispositivo("Sucursal A", "126"));
         
-        System.out.println(numeros);
+        System.out.println(compumundo.getTablaDispositivos());
         
-        /*for (int i = 0; i < numeros.size(); i++) {
-            if (numeros.get(i) == 3) {
-                numeros.remove(i);
-                break;
-            }
+        for (double n : compumundo.porcDispositivosPorTipo("Sucursal A")) {
+            System.out.println(n);
         }
-        
-        for (int i = numeros.size() - 1; i >= 1; i--) {
-            if (numeros.get(i) == 3) {
-                numeros.remove(i);
-            }
-        }*/
-        
-        
-        
-        System.out.println(numeros);
         
     }
     
@@ -50,8 +38,8 @@ public class IntegradorListas {
         
         //Agregar dspositivos se los pasamos a la Cadena (nombre sucursal, dispositivo)
         
-        Sucursal suc1 = new Sucursal("Sucusal A");
-        Sucursal suc2 = new Sucursal("Sucusal B");
+        Sucursal suc1 = new Sucursal("Sucursal A");
+        Sucursal suc2 = new Sucursal("Sucursal B");
         
         suc1.agregarDispositivo(new DispositivoElectronico("123", TipoDispositivo.COMPUTADORA, 1500));
         suc1.agregarDispositivo(new DispositivoElectronico("124", TipoDispositivo.TABLET, 750));
@@ -59,7 +47,7 @@ public class IntegradorListas {
         suc1.agregarDispositivo(new DispositivoElectronico("126", TipoDispositivo.COMPUTADORA, 1500));
         
         suc2.agregarDispositivo(new DispositivoElectronico("223", TipoDispositivo.COMPUTADORA, 1500));
-        suc2.agregarDispositivo(new DispositivoElectronico("223", TipoDispositivo.COMPUTADORA, 1500));
+        suc2.agregarDispositivo(new DispositivoElectronico("228", TipoDispositivo.COMPUTADORA, 1500));
         suc2.agregarDispositivo(new DispositivoElectronico("224", TipoDispositivo.TABLET, 750));
         suc2.agregarDispositivo(new DispositivoElectronico("225", TipoDispositivo.TELEFONO, 1000));
         suc2.agregarDispositivo(new DispositivoElectronico("227", TipoDispositivo.TELEFONO, 1150));

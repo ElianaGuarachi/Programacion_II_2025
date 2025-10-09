@@ -1,6 +1,7 @@
 package integradorlistas;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Objects;
 
 public class Sucursal {
@@ -25,6 +26,10 @@ public class Sucursal {
     public Sucursal(String nombre){
         this.nombre = nombre;
         this.dispositivos = new ArrayList<>();
+    }
+    
+    public boolean tieneNombre(String nombre){
+        return this.nombre.equals(nombre);
     }
     
     public void agregarDispositivo(DispositivoElectronico dispositivo){
@@ -60,5 +65,68 @@ public class Sucursal {
         }
         return nombre.equals(s.nombre);
     }
+    
+    public DispositivoElectronico borrarDispositivo(String id){
+        DispositivoElectronico eliminado = null;
+        int i = 0;
+        boolean borrado = false;
+        while (i < dispositivos.size() && !borrado ) {  
+            if ((eliminado = dispositivos.get(i++)).tieneId(id)) {
+                borrado = dispositivos.remove(eliminado);
+            }
+            i++;
+        }
+        return borrado ? eliminado : null;
+    }  
+
+    /*public DispositivoElectronico borrarDispositivoIt(String id){
+        Iterator<DispositivoElectronico> iterador = dispositivos.iterator();
+        DispositivoElectronico toReturn = null;
+        boolean borrado = false;
+        while (iterador.hasNext() && !borrado) {
+            toReturn = iterador.next();
+            if (toReturn.equals(id)) {
+                iterador.remove();
+            }
             
+        }
+        return borrado ? toReturn : null;
+    }  */  
+    
+    public DispositivoElectronico borrarDispositivoIt(String id){
+        for (DispositivoElectronico d: dispositivos) {
+            if (d.tieneId(id)) {
+                dispositivos.remove(d);
+                System.out.println("Borrado exitoso");
+                return d;
+            }
+            
+        }
+        return null;
+    }
+    
+    public DispositivoElectronico borrarDispositivoModerno(String id){
+        dispositivos.removeIf((d) -> d.tieneId(id));
+        return null;///solo para sacar el error
+    }
+    
+    public double[] porcDispositivosPorTipo(){
+        TipoDispositivo[] tipos = TipoDispositivo.values();
+        double[] porcentajes = new double[tipos.length];
+        int[] contadores = new int[tipos.length];
+        
+        for (DispositivoElectronico d : dispositivos) {
+            contadores[d.getTipo().ordinal()]++;
+        }
+        
+        for (int i = 0; i < tipos.length; i++) {
+            porcentajes[i] = calcularPorcentaje(contadores[i]);
+        }
+        
+        return porcentajes;   
+    }
+    
+    private double calcularPorcentaje(int cantidad){
+        return (double) cantidad * 100 / dispositivos.size();
+    }
 }

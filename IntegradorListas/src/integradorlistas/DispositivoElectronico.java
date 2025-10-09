@@ -25,6 +25,14 @@ public class DispositivoElectronico {
     public boolean esTipo(TipoDispositivo tipo){
         return this.tipo.equals(tipo);
     }
+    
+    public TipoDispositivo getTipo(){
+        return tipo;
+    }
+    
+    public boolean tieneId(String id){
+        return this.id.equals(id);
+    }
 
     @Override
     public String toString() {
