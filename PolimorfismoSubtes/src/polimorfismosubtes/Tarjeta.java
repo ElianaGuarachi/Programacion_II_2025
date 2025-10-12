@@ -18,9 +18,9 @@ public abstract class Tarjeta {
     
     protected abstract String mensajeNoPuedoViajar();
     
-    public void Viajar() {
+    public void viajar() {
         if (!puedoViajar()) {
-            throw new NoPuedoViajarException();
+            throw new NoPuedoViajarException(mensajeNoPuedoViajar());
         }        
         descontarViaje();
         System.out.println("Viajando...");

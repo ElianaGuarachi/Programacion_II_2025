@@ -11,7 +11,7 @@ public class TarjetaRecargable extends Tarjeta{
     
     public void recargar(double monto){
         if (monto <= 0) {
-            
+            throw new IllegalArgumentException("Monto invalido");
         }
         saldo += monto;
     }
@@ -34,7 +34,8 @@ public class TarjetaRecargable extends Tarjeta{
         saldo -= precioViaje();
     }
     
+    @Override
     protected String mensajeNoPuedoViajar(){
-        return "";
+        return "Saldo insuficiente....";
     }
 }

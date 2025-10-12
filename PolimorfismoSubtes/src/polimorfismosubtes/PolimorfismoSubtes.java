@@ -8,21 +8,50 @@ public class PolimorfismoSubtes {
         
         CentralSubte central = new CentralSubte(precioInicial);
         
+        /*TarjetaRecargableDescuento trd = new TarjetaRecargableDescuento(central, 0.30);
+        
+        trd.recargar(2000);
+        
+        trd.viajar();
+        trd.viajar();
+        
+        trd.recargar(100);
+        
+        trd.viajar();
+        trd.viajar();
+        
+        System.out.println(trd.getSaldo());*/
+        
+        
+        
+        /*TarjetaFija tf = new TarjetaFija(central, 4);
+        
+        System.out.println(tf.getViajes());
+        
+        tf.viajar();
+        tf.viajar();
+        tf.viajar();
+        tf.viajar();
+        
+        System.out.println(tf.getViajes());
+        
+        tf.viajar();*/
+        
         TarjetaRecargable tarjeta = new TarjetaRecargable(central);
         
-        TarjetaFija tf = new TarjetaFija(central, 4);
+        System.out.println("Saldo: "+ tarjeta.getSaldo());
         
-        System.out.println(tf.getViajes());
+        tarjeta.recargar(3000);
         
-        tf.viajar();
-        tf.viajar();
-        tf.viajar();
-        tf.viajar();
+        System.out.println("Saldo: " + tarjeta.getSaldo());
         
-        System.out.println(tf.getViajes());
+        tarjeta.viajar();
+        tarjeta.viajar();
+        tarjeta.viajar();
         
-        tf.viajar();
+        System.out.println("Saldo: " + tarjeta.getSaldo());
         
+        tarjeta.viajar();
     }
     
 }

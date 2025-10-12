@@ -13,4 +13,9 @@ public class TarjetaRecargableDescuento extends TarjetaRecargable {
     protected double precioViaje(){
         return super.precioViaje() * (1 - descuento);
     }
+    
+    @Override
+    protected String mensajeNoPuedoViajar(){
+        return "Saldo insuficiente.... aunque el viaje te salga mas barato";
+    }
 }

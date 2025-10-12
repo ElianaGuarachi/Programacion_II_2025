@@ -13,10 +13,6 @@ public class TarjetaFija extends Tarjeta {
         return viajes;
     }
     
-    public void viajar(){
-        //
-    }
-    
     @Override
     protected boolean puedoViajar(){
         return viajes > 0;
@@ -29,6 +25,6 @@ public class TarjetaFija extends Tarjeta {
 
     @Override
     protected String mensajeNoPuedoViajar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return "No quedan viajes";
     }
 }
