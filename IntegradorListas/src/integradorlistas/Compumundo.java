@@ -3,12 +3,17 @@ package integradorlistas;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IntegradorListas {
+public class Compumundo {
 
     public static void main(String[] args) {
         
         CadenaTecnologia compumundo = new CadenaTecnologia();
-        hardcodearCadena(compumundo);
+        try {
+            hardcodearCadena(compumundo);           
+        } catch (SucursalRepetidaException e) {
+            System.out.println(e.getMessage());
+        }
+
         
         System.out.println(compumundo.getDispositivos(TipoDispositivo.TABLET));
         
@@ -18,13 +23,25 @@ public class IntegradorListas {
         
         Utils.separadorLargo();
         
-        System.out.println(compumundo.borrarDispositivo("Sucursal A", "126"));
+        try {
+            System.out.println(compumundo.borrarDispositivo("Sucursal A", "126"));
         
-        System.out.println(compumundo.getTablaDispositivos());
+            System.out.println(compumundo.getTablaDispositivos());
         
-        for (double n : compumundo.porcDispositivosPorTipo("Sucursal A")) {
-            System.out.println(n);
+            double por[] = compumundo.porcDispositivosPorTipo("Sucursal B");
+        
+            for (TipoDispositivo tipo : TipoDispositivo.values()) {
+            System.out.println("%s: %.2f".formatted(tipo.name(), por[tipo.ordinal()]));
         }
+        } catch (SucursalInexistenteException e) {
+            
+            System.out.println("Sucursal no identificada");
+        }
+        /*for (double n : compumundo.porcDispositivosPorTipo("Sucursal A")) {
+            System.out.println(n);
+        }*/
+        
+        
         
     }
     
@@ -34,7 +51,7 @@ public class IntegradorListas {
         }
     }
     
-    public static void hardcodearCadena(CadenaTecnologia cadena){
+    public static void hardcodearCadena(CadenaTecnologia cadena)  throws SucursalRepetidaException{
         
         //Agregar dspositivos se los pasamos a la Cadena (nombre sucursal, dispositivo)
         
@@ -54,5 +71,6 @@ public class IntegradorListas {
         
         cadena.agregarSucursal(suc1);
         cadena.agregarSucursal(suc2);
+        cadena.agregarSucursal(suc1);
     }
 }

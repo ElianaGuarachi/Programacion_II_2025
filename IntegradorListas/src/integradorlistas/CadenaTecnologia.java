@@ -2,13 +2,13 @@ package integradorlistas;
 
 import java.util.ArrayList;
 
-public class CadenaTecnologia {
+public class CadenaTecnologia{
        
     private final ArrayList <Sucursal> sucursales = new ArrayList<>();
     
     public void agregarSucursal(Sucursal sucursal){
         if(sucursal == null || sucursales.contains(sucursal)){
-            throw new IllegalArgumentException("Sucursal invalida");
+            throw new SucursalRepetidaException("Sucursal invalida");
         }
         sucursales.add(sucursal);
     }
@@ -42,18 +42,18 @@ public class CadenaTecnologia {
         return null;
     }
     
-    public DispositivoElectronico borrarDispositivo(String nombreSucursal, String idDispositivo){
+    public DispositivoElectronico borrarDispositivo(String nombreSucursal, String idDispositivo) throws SucursalInexistenteException{
         Sucursal suc = buscarSucursal(nombreSucursal);
         if (suc == null) {
-            throw new IllegalArgumentException("Sucursal inexistente");
+            throw new SucursalInexistenteException();
         }
         return suc.borrarDispositivoIt(idDispositivo);
     }
     
-    public double[] porcDispositivosPorTipo(String nombreSucursal){
+    public double[] porcDispositivosPorTipo(String nombreSucursal) throws SucursalInexistenteException{
         Sucursal suc = buscarSucursal(nombreSucursal);
         if (suc == null) {
-            throw new IllegalArgumentException("Sucursal inexistente");
+            throw new SucursalInexistenteException();
         }
         return suc.porcDispositivosPorTipo();
     }
