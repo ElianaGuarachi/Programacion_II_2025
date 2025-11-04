@@ -16,11 +16,6 @@ public class BolilleroAleatorio<T> implements Bolillero<T> {
         Objects.requireNonNull(bolilla, "Bolilla nula");
         bolillas.add(bolilla);
     }
-    
-    @Override
-    public boolean quedanBolillas(){
-        return !bolillas.isEmpty();
-    }
 
     @Override
     public void vaciarBolillero(){

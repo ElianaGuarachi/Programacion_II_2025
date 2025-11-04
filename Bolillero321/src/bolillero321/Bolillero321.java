@@ -20,11 +20,15 @@ public class Bolillero321 {
         
         Bolillero.cargarBolillero(bingo, pilotos);
         
+        System.out.println("%.2f%%".formatted(bingo.porcBolillasRestantes(pilotos.length)));
+        
         System.out.println("Inicia sorteo");
         
         while (bingo.quedanBolillas()) {            
             System.out.println(bingo.extraerBolilla());
         }
+        
+        
         
         System.out.println("Fin sorteo");
     }

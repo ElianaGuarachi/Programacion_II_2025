@@ -1,5 +1,7 @@
 package bolillero321;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public interface Bolillero<T> {
@@ -14,7 +16,24 @@ public interface Bolillero<T> {
         }
     }
     
-    boolean quedanBolillas();
+    default boolean quedanBolillas(){
+        return cantidadBolillas() > 0;
+    }
+    
+    default List<T> extraerVarias(int cant){
+        if (cant < 0 && cant > cantidadBolillas()) {
+            throw new IllegalArgumentException("Cantidad invalida");
+        }
+        List<T> toReturn = new ArrayList<>();
+        for (int i = 0; i < cant; i++) {
+            toReturn.add(extraerBolilla());
+        }
+        return toReturn;
+    }
+    
+    default double porcBolillasRestantes(int cantOriginal){
+        return cantidadBolillas() / cantOriginal * 100;
+    }
 
     void vaciarBolillero();
 
