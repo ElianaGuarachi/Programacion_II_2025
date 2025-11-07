@@ -2,17 +2,31 @@ package ordenamiento321;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Ordenamiento321 {
 
     public static void main(String[] args) {
         
+        List<Integer> numeros = new ArrayList<>(List.of(23,45,78,89,56,78,15,4,5));
+        List<String> nombres = new ArrayList<>(List.of("Juan", "Eliana", "Carlos"));
         List<Empleado> lista = new ArrayList<>();
         cargarEmpleados(lista);
-                
-        Collections.sort(lista);
         
+        //Comparator<Empleado> c = new ComparadorGeneroSueldo();
+        Comparator<Empleado> c = new Comparator<>(){
+            @Override
+            public int compare(Empleado e1, Empleado e2) {
+                return e1.getSector().compareTo(e2.getSector());
+            }
+            
+        };
+        
+        //Collections.sort(lista, new ComparadorGeneroSueldo());
+        Collections.sort(lista, c);
+        //lista.sort(c);
+        //mostrarLista(lista);
         listarEmpleados(lista);
                 
                 

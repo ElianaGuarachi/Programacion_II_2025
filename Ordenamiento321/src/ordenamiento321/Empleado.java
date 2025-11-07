@@ -20,6 +20,34 @@ public class Empleado implements Comparable<Empleado>{
         this.sueldo = sueldo;
     }
 
+    public int getLegajo() {
+        return legajo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public char getGenero() {
+        return genero;
+    }
+
+    public Date getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public Sector getSector() {
+        return sector;
+    }
+
+    public double getSueldo() {
+        return sueldo;
+    }
+
     @Override
     public String toString() {
         return "Empleado{" + "legajo=" + legajo + ", nombre=" + nombre + ", genero=" + genero + ", fechaIngreso=" + fechaIngreso + ", edad=" + edad + ", sector=" + sector + ", sueldo=" + sueldo + '}';
