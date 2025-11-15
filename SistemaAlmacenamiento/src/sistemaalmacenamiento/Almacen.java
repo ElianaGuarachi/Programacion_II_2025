@@ -49,7 +49,7 @@ public class Almacen<T> implements Almacenable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return items.iterator();
+        return new ArrayList<T>(items).iterator(); //items.iterator() 
     }
     
 }

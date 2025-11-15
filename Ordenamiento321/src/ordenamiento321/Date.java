@@ -19,4 +19,8 @@ public class Date {
     }
     
     
+    public int compareTo(Date d) {
+
+        return 0;
+    }
 }
